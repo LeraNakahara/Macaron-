@@ -1,9 +1,12 @@
 import PromotionData from "./PromotionData";
 import { PromotionItems } from "../data";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function Promotions() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [promotions, setPromotions] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const slideRef = useRef(null); //Ref для скролла
   const isMobile = window.innerWidth < 768;
 
@@ -25,6 +28,33 @@ export default function Promotions() {
       slideRef.current.scrollLeft -= slideRef.current.offsetWidth;
     }
   };
+
+  useEffect(() => {
+    const fetchPromotions = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch("http://localhost:3000/promotions");
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        setPromotions(data);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPromotions();
+  }, []);
+
+  if (loading) {
+    return <div> Загрузка..</div>;
+  }
+  if (error) {
+    return <span>Ошибка: {error.message}</span>;
+  }
 
   return (
     <>

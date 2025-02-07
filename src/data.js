@@ -228,8 +228,8 @@ export const InfoList = [
     id: 2,
     title: "Каталог",
     links: [
-      { text: "Каталог десертов", to: "" },
-      { text: "Готовые наборы", to: "" },
+      { text: "Каталог десертов", to: "/catalog" },
+      { text: "Готовые наборы", to: "/preparesets" },
       { text: "Собрать свой набор", to: "" },
       { text: "Акции", to: "" },
     ],
