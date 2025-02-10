@@ -63,7 +63,7 @@ export const cardItems = [
   },
 ];
 
-export const PromotionItems = [
+/*export const PromotionItems = [
   {
     id: 1,
     src: "./images/white.svg",
@@ -114,7 +114,7 @@ export const PromotionItems = [
   },
 ];
 
-export const PopularSetItems = [
+/*export const PopularSetItems = [
   {
     id: 1,
     pic: "./images/redheart.svg",
@@ -166,7 +166,7 @@ export const PopularSetItems = [
     price: "2500руб",
     button: "В корзину",
   },
-];
+];*/
 
 export const CareCardItems = [
   {

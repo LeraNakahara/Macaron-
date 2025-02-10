@@ -1,5 +1,4 @@
 import PromotionData from "./PromotionData";
-import { PromotionItems } from "../data";
 import { useState, useRef, useEffect } from "react";
 
 export default function Promotions() {
@@ -69,13 +68,13 @@ export default function Promotions() {
       >
         {isMobile ? (
           <PromotionData
-            key={PromotionItems[currentSlide].id}
-            {...PromotionItems[currentSlide]}
+            key={promotions[currentSlide].id}
+            {...promotions[currentSlide]}
           />
         ) : (
-          PromotionItems.slice(currentSlide, currentSlide + 3).map((pro) => (
-            <PromotionData key={pro.id} {...pro} />
-          ))
+          promotions
+            .slice(currentSlide, currentSlide + 3)
+            .map((pro) => <PromotionData key={pro.id} {...pro} />)
         )}
       </div>
       <div className="flex justify-center gap-4 mt-4">
