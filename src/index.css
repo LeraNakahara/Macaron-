@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("./fonts/proximanova_regular.ttf");
+  font-weight: var(--font-weight-light);
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-weight-light: 300; /* Вы можете использовать числовое значение или имя (например, "lighter") */
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("./fonts/proximanova_bold.otf");
+  font-weight: var(--font-weight-bold);
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-weight-bold: 600; /* Вы можете использовать числовое значение или имя (например, "lighter") */
+}
